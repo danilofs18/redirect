@@ -1,0 +1,17 @@
+{
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "eslint.codeActionsOnSave.mode": "problems",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "files.exclude": {
+    ".eslintcache": true
+  },
+  "prettier.requireConfig": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+}

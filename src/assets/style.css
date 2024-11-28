@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind utilities;
+
+body {
+  background-color: hsl(240 10% 3.9%);
+  color: hsl(0 0% 98%);
+}
