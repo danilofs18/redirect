@@ -6,7 +6,7 @@ import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
   plugins: [vue()],
-  base: import.meta.env.DEV ? '' : '/redirect/',
+  base: '/redirect/',
   css: {
     postcss: {
       plugins: [tailwind(), autoprefixer()],
