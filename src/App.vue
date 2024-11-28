@@ -13,7 +13,7 @@ const {
 });
 
 async function fetchConfig(): Promise<Config> {
-  const response = await fetch('redirect/data/config.json');
+  const response = await fetch('data/config.json');
   return response.json();
 }
 
