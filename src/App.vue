@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useAsyncState } from '@vueuse/core';
-import { computed, onBeforeMount } from 'vue';
+import Button from '@/components/Button.vue';
+import { computed, onBeforeMount, onMounted } from 'vue';
 
 const {
   state: config,
@@ -17,29 +18,29 @@ async function fetchConfig(): Promise<Config> {
   return response.json();
 }
 
-const iframeSrc = computed(() => {
+const src = computed(() => {
   if (!config.value) return null;
   return `http://${config.value.ip}:${config.value.port}`;
 });
 
+function navigate() {
+  if (src.value) {
+    window.location.assign(src.value);
+  }
+}
+
 onBeforeMount(() => {
   void execute();
+});
+
+onMounted(() => {
+  setTimeout(() => navigate(), 5000);
 });
 </script>
 
 <template>
-  <div class="fixed inset-0">
-    <iframe
-      v-if="!isLoading && iframeSrc"
-      title="De gustibus non est disputandum"
-      width="100%"
-      height="100%"
-      class="border-none border-0"
-      :src="iframeSrc"
-    ></iframe>
-
-    <div v-else class="fixed inset-0 flex items-center justify-center">
-      <p class="font-bold text-xl">Carregando...</p>
-    </div>
+  <div class="fixed inset-0 flex items-center justify-center">
+    <Button v-if="!isLoading && src" @click="() => navigate()">Redirecionar</Button>
+    <p v-else class="font-bold text-xl">Carregando...</p>
   </div>
 </template>
