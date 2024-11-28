@@ -12,7 +12,7 @@ defineSlots<{ default: () => VNode }>();
 
 <style scoped>
 button {
-  border: 1px solid var(--color-outline);
+  border: 1px solid #8a938c;
   border-radius: 6px;
   background-color: transparent;
   padding: 0.4rem 0.75rem;
@@ -27,7 +27,7 @@ button {
 
 button:hover {
   box-shadow: 0 0 1px 1px rgb(0 0 0 / 15%);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
+  border-color: #6fdba8;
+  color: #6fdba8;
 }
 </style>
