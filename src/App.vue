@@ -20,7 +20,7 @@ async function fetchConfig(): Promise<Config> {
 
 const src = computed(() => {
   if (!config.value) return null;
-  return `http://${config.value.ip}:${config.value.port}`;
+  return `http://${config.value.ip}`;
 });
 
 function navigate() {
