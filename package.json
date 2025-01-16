@@ -1,6 +1,6 @@
 {
   "name": "redirect",
-  "version": "0.1.55",
+  "version": "0.1.56",
   "type": "module",
   "packageManager": "pnpm@9.14.4",
   "private": true,
